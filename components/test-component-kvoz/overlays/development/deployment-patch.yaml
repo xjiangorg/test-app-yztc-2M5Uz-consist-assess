@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: test-component-kvoz
+  namespace: build-e2e-wyxx-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio-qe/test-images@sha256:f235ec44d3c97da3b20f626cd67236db21f8c0b7319ae623dbf5690136283b0a
+        name: my-python
+        resources: {}
+status: {}
