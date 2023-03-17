@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test-component-kvoz
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-component-kvoz
+    app.kubernetes.io/part-of: test-app-yztc
+  name: test-component-kvoz
+  namespace: build-e2e-wyxx-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+      app.kubernetes.io/instance: test-component-kvoz
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-app
+        app.kubernetes.io/instance: test-component-kvoz
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio-qe/test-images:a8aec14ea5bb494e8736d74fe24e1e56
+        name: my-python
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 50Mi
+status: {}
