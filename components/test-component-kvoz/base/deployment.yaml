@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: test-component-kvoz
     spec:
       containers:
-      - image: quay.io/redhat-appstudio-qe/test-images:a8aec14ea5bb494e8736d74fe24e1e56
+      - image: quay.io/redhat-appstudio-qe/test-images@sha256:f235ec44d3c97da3b20f626cd67236db21f8c0b7319ae623dbf5690136283b0a
         name: my-python
         ports:
         - containerPort: 8081
